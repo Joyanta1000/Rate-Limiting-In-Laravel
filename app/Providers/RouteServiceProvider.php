@@ -39,29 +39,4 @@ class RouteServiceProvider extends ServiceProvider
         });
     }
 
-
-
-    protected function configureRateLimiting()
-    {
-        RateLimiter::for('login', function (Request $request) {
-            return [
-                Limit::perMinute(500),
-                Limit::perMinute(3)->by($request->input('email')),
-            ];
-        });
-    }
-
-
-    // protected function resolveRequestSignature($request)
-    // {
-    //     if (!$request->route()) {
-    //         throw new RuntimeException('Unable to generate fingerprint. Route unavailable.');
-    //     }
-    //     return sha1(
-    //         implode('|', $request->route()->methods()) .
-    //             '|' . $request->route()->domain() .
-    //             '|' . $request->route()->uri() .
-    //             '|' . $request->ip() // Replace this line
-    //     );
-    // }
 }
