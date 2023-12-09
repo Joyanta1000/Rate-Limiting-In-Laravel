@@ -2,7 +2,7 @@
 https://laravel.com/api/10.x/Illuminate/Cache/RateLimiter.html
 
 ## Middleware to handle
-** You have to create middleware **
+**You have to create middleware**
 
 ## Code in middleware
 
@@ -16,3 +16,10 @@ https://laravel.com/api/10.x/Illuminate/Cache/RateLimiter.html
         return $next($request);
     }
 
+## Configuration for middleware
+    
+    > app/Http/kernel.php
+
+    In middlewareAliases
+
+    'login.attempt' => \App\Http\Middleware\LoginAttemptMiddleware::class,
