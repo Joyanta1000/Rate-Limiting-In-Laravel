@@ -23,3 +23,9 @@ https://laravel.com/api/10.x/Illuminate/Cache/RateLimiter.html
     In middlewareAliases
 
     'login.attempt' => \App\Http\Middleware\LoginAttemptMiddleware::class,
+
+## Call middleware
+
+    > api.php/web.php
+
+    Route::post('login',[UserController::class,'loginUser'])->middleware(['login.attempt']);
